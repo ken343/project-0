@@ -1,7 +1,8 @@
-#Project 0: Resturant Selection Tool
+# Project 0: Resturant Selection Tool
 The Resturant Selection Tool is a CLI program that help a group of people select a place to eat based on selection criteria.
 
-##User Stories
+## User Stories
+
 -[X] User can get instant suggestion for eating location
 -[] User can get a numbered list for eating location
 -[] User can get list of locations based on price, food genre, and distance from Liv+ apartments
