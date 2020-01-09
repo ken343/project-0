@@ -1,8 +1,11 @@
+// Package dining is a package dedicated for representing restaurants and the
+//auxilory function that operate on them.
 package dining
 
 import "fmt"
 
-// STRUCT SECTION
+// Restaurant is a data struction that represents restaurants with a
+//name, type of cuisine, maximum price, and a distance from Liv+.
 type Restaurant struct {
 	Name     string
 	Cuisine  string
@@ -10,7 +13,7 @@ type Restaurant struct {
 	Distance float64
 }
 
-// Prints out restaurant information in formatted string.
+// GetRecommendation prints out restaurant information in formatted string.
 func GetRecommendation(r Restaurant) {
 	fmt.Printf("The %s restaurant, %s, is availabe %.1f miles away and has prices below $%.2f.\n", r.Cuisine, r.Name, r.Distance, r.Price)
 }
