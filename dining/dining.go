@@ -12,5 +12,5 @@ type Restaurant struct {
 
 // Prints out restaurant information in formatted string.
 func GetRecommendation(r Restaurant) {
-	fmt.Printf("The %s restaurant, %s, is availabe %.1f miles away and has prices below $%.2f.", r.Cuisine, r.Name, r.Distance, r.Price)
+	fmt.Printf("The %s restaurant, %s, is availabe %.1f miles away and has prices below $%.2f.\n", r.Cuisine, r.Name, r.Distance, r.Price)
 }

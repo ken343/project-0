@@ -5,5 +5,6 @@ import (
 )
 
 func main() {
-	dining.GetRecommendation(mcd)
+	dining.GetRecommendation(restSlice[0])
+	dining.GetRecommendation(restSlice[1])
 }
