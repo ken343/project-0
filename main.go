@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+//STRUCT SECTION
+
 type restaurant struct {
 	name     string
 	cuisine  string
@@ -9,22 +11,27 @@ type restaurant struct {
 	distance float64
 }
 
-//Prints in format: [McDonalds: Fast Food | Under $10 | Under 5 miles]
-func printR(r restaurant) {
-	fmt.Println(r.name, r.cuisine, r.price, r.distance)
+//FUNCTION SECTION
+
+//Prints out restaurant information in formatted string.
+func printrestaurant(r restaurant) {
+	fmt.Printf("The %s restaurant, %s, is availabe %.1f miles away and has prices below $%.2f.", r.cuisine, r.name, r.distance, r.price)
 }
 
-func main() {
+//VAR DECLARATION SECTION
 
-	var mcd restaurant = restaurant{
+var mcd restaurant
+
+//PROGRAM
+func init() {
+	mcd = restaurant{
 		name:     "McDonalds",
 		cuisine:  "fast-food",
 		price:    10,
 		distance: 5,
 	}
+}
 
-	printR(mcd)
-
-	var instantRestuant string = "[McDona lds: Fast Food | Under $10 | Under 5 miles]"
-	fmt.Println(instantRestuant)
+func main() {
+	printrestaurant(mcd)
 }
