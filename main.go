@@ -14,7 +14,7 @@ type restaurant struct {
 //FUNCTION SECTION
 
 //Prints out restaurant information in formatted string.
-func printrestaurant(r restaurant) {
+func getRecommendation(r restaurant) {
 	fmt.Printf("The %s restaurant, %s, is availabe %.1f miles away and has prices below $%.2f.", r.cuisine, r.name, r.distance, r.price)
 }
 
@@ -33,5 +33,5 @@ func init() {
 }
 
 func main() {
-	printrestaurant(mcd)
+	getRecommendation(mcd)
 }
