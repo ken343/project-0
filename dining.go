@@ -1,6 +1,6 @@
 // Package dining is a package dedicated for representing restaurants and the
 //auxilory functions that operate on them.
-package dining
+package main
 
 import "fmt"
 

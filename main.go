@@ -1,10 +1,11 @@
 package main
 
-import (
-	"github.com/ken343/project-0/dining"
-)
+import "fmt"
 
 func main() {
-	dining.GetRecommendation(restSlice[0])
-	dining.GetRecommendation(restSlice[1])
+	GetRecommendation(restSlice[0])
+	GetRecommendation(restSlice[1])
+	fmt.Printf("Cuiseine: %s\n", *pFoodType)
+	fmt.Printf("Distance: %.2f\n", *pMaxDistance)
+	fmt.Printf("Price: %.2f\n", *pMaxPrice)
 }
