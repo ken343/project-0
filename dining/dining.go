@@ -1,10 +1,10 @@
 // Package dining is a package dedicated for representing restaurants and the
-//auxilory function that operate on them.
+//auxilory functions that operate on them.
 package dining
 
 import "fmt"
 
-// Restaurant is a data struction that represents restaurants with a
+// Restaurant is a data structure that represents restaurants with a
 //name, type of cuisine, maximum price, and a distance from Liv+.
 type Restaurant struct {
 	Name     string
