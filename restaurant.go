@@ -17,3 +17,18 @@ type Restaurant struct {
 func GetRecommendation(r Restaurant) {
 	fmt.Printf("The %s restaurant, %s, is availabe %.1f miles away and has prices below $%.2f.\n", r.Cuisine, r.Name, r.Distance, r.Price)
 }
+
+// FilterPrice takes in a slice of restaurants and returns a new slice of restaurants that all have prices
+// below the filter value.
+func FilterPrice(r *[]Restaurant, filter float64) {
+
+	surrogateSlice := make([]Restaurant, 0)
+
+	for i := 0; i < len(*r); i++ {
+		if (*r)[i].Price <= filter {
+			surrogateSlice = append(surrogateSlice, (*r)[i])
+		}
+	}
+
+	*r = surrogateSlice
+}
