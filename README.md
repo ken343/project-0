@@ -3,9 +3,13 @@ The Resturant Selection Tool is a CLI program that help a group of people select
 
 ## User Stories
 
--[X] User can get instant suggestion for eating location
--[] User can get a list for eating location
--[] User can get list of locations based on price, food genre, and distance from Liv+ apartments
--[] User can add new locations to the program inventory
+-[x] User can get a list for potential eating locations 
+-[] User can get a filtered list of locations based on price, food genre, and distance from Liv+ apartments based on CLI flags
+-[] User can add new locations to text file to expand list of restaurant options 
 
 **food [-t or --type] [type string] [-p or --price] [float price] [-d or --distance] [float distance]**
+
+### To-Do List
+-[x] Add Basic Functionality to Program
+-[x] Add CLI flags to program arguments
+-[] Add text file support for maintaining list of restaurants

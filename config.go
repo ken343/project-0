@@ -9,7 +9,7 @@ var pMaxPrice *float64
 var pMaxDistance *float64
 
 func init() {
-	// Set up array of 
+	// Set up slice of
 	restSlice = append(restSlice, Restaurant{
 		Name:     "McDonalds",
 		Cuisine:  "fast-food",
@@ -22,6 +22,20 @@ func init() {
 		Cuisine:  "sandwich",
 		Price:    20,
 		Distance: 1.1,
+	})
+
+	restSlice = append(restSlice, Restaurant{
+		Name:     "Red Lobster",
+		Cuisine:  "sea-food",
+		Price:    30,
+		Distance: 20.5,
+	})
+
+	restSlice = append(restSlice, Restaurant{
+		Name:     "Eddie V's",
+		Cuisine:  "fancy",
+		Price:    50,
+		Distance: 10.5,
 	})
 
 	// Set up flags for use in filter function
