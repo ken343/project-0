@@ -2,6 +2,9 @@ package main
 
 import "flag"
 
+// LISTFILE provides the name of the file where all the restaurant json data is located.
+const LISTFILE = "./restaurant_list.txt"
+
 var restSlice []Restaurant
 
 var pFoodType *string
