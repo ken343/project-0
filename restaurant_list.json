@@ -10,7 +10,7 @@
 		"Name":     "Pot Belly's",
 		"Cuisine":  "sandwich",
 		"Price":    20,
-        "Distance": 1.1,
+        "Distance": 1.1
     },
     
     {
@@ -25,5 +25,12 @@
 		"Cuisine":  "fancy",
 		"Price":    50,
 		"Distance": 10.5
-    }
+	},
+	
+	{
+		"Name": "Sonic",
+		"Cuisine": "fast-food",
+		"Price": 5,
+		"Distance": 10
+	}
 ]
