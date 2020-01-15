@@ -9,15 +9,15 @@ Suggestions:
 - a web server with HTML templates and forms
 
 ## Features
-- [ ] Documentation
+- [X] Documentation
 - [ ] Unit testing
 - [ ] Benchmarking
 - [ ] Logging
 - [ ] API Library
-- [ ] CLI flags
+- [X] CLI flags
 - [ ] Environment variables
 - [ ] Concurrency
-- [ ] Data Persistance
+- [X] Data Persistance
 - [ ] HTTP/HTTPS API
 
 ## Presentation
