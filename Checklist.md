@@ -12,7 +12,7 @@ Suggestions:
 - [X] Documentation
 - [ ] Unit testing
 - [ ] Benchmarking
-- [ ] Logging
+- [O] Logging
 - [ ] API Library
 - [X] CLI flags
 - [ ] Environment variables
