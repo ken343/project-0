@@ -2,13 +2,19 @@
 // auxilory functions that operate on them.
 package restaurant
 
-import "fmt"
+import (
+	"fmt"
 
+	"github.com/ken343/project-0/pkg/filter"
+)
+
+// These flags are intended to be used with the filter package methods,
+// SetOrdinalOption and SetLexicalOption.
 const (
-	NAME     = "name"
-	CUISINE  = "cuisine"
-	PRICE    = "price"
-	DISTANCE = "distance"
+	NAME     = "name"     // Filter will use Restaurant Name for lexical filtering.
+	CUISINE  = "cuisine"  // Filter will use Restaurant Cuisine for lexical filtering.
+	PRICE    = "price"    // Filter will use Restaurant Price for ordinal filtering.
+	DISTANCE = "distance" // Filter will use Restaurant Distance for ordinal filtering.
 )
 
 // Restaurant is a data structure that represents restaurants with a
@@ -22,15 +28,21 @@ type Restaurant struct {
 	lexicalOption string
 }
 
-func (r *Restaurant) SetOrdinalOption(option string) {
+// SetOrdinalOption uses one of flags provided (e.g Restaurnat.PRICE ) to set which
+// numerical field will be used by the Restaurant struct for determining filter behavior.
+func (r Restaurant) SetOrdinalOption(option string) {
 	r.ordinalOption = option
 }
 
-func (r *Restaurant) SetLexicalOption(option string) {
+// SetLexicalOption uses one of flags provided (e.g Restaurnat.CUISINE) to set which
+// alphabetical field will be used by the Restaurant struct for determiing filter behavior.
+func (r Restaurant) SetLexicalOption(option string) {
 	r.lexicalOption = option
 }
 
-func (r *Restaurant) OrdinalVal() float64 {
+// OrdinalVal returns the struct value set by the SetOrdinalOption method.
+// It is used internally to implent the behavior of filter.Ordinal()
+func (r Restaurant) OrdinalVal() float64 {
 	switch r.ordinalOption {
 	case PRICE:
 		return r.Price
@@ -41,7 +53,9 @@ func (r *Restaurant) OrdinalVal() float64 {
 	}
 }
 
-func (r *Restaurant) LexicalVal() string {
+// LexicalVal returns the struct value set by the SetLexicalOption method.
+// It is used internally to implent the behavior of filter.Lexical()
+func (r Restaurant) LexicalVal() string {
 	switch r.lexicalOption {
 	case NAME:
 		return r.Name
@@ -57,64 +71,40 @@ func GetRecommendation(r Restaurant) {
 	fmt.Printf("The %s restaurant, %s, is availabe %.1f miles away and has prices below $%.2f.\n", r.Cuisine, r.Name, r.Distance, r.Price)
 }
 
-// FilterPrice pares down the input slice of Restaurant structs to only include restaurants within
-// the filtered maximum price.
-func FilterPrice(r *[]Restaurant, filter float64) {
-
-	surrogateSlice := make([]Restaurant, 0)
-
-	for i := 0; i < len(*r); i++ {
-		if (*r)[i].Price <= filter {
-			surrogateSlice = append(surrogateSlice, (*r)[i])
-		}
-	}
-
-	*r = surrogateSlice
-}
-
-// FilterFood pares down the input slice of Restaurant structs to only include restaurants within
-// the filtered type of cuisine.
-func FilterFood(r *[]Restaurant, filter string) {
-
-	surrogateSlice := make([]Restaurant, 0)
-
-	for i := 0; i < len(*r); i++ {
-		if (*r)[i].Cuisine == filter {
-			surrogateSlice = append(surrogateSlice, (*r)[i])
-		}
-	}
-
-	*r = surrogateSlice
-}
-
-// FilterDistance pares down the input slice of Restaurant structs to only include restaurants within
-// the filtered distance.
-func FilterDistance(r *[]Restaurant, filter float64) {
-
-	surrogateSlice := make([]Restaurant, 0)
-
-	for i := 0; i < len(*r); i++ {
-		if (*r)[i].Distance <= filter {
-			surrogateSlice = append(surrogateSlice, (*r)[i])
-		}
-	}
-
-	*r = surrogateSlice
-}
-
-// RestaurantFilter will pare down the input slice of Restaurants structs to only include the
+// Filter will pare down the input slice of Restaurants structs to only include the
 // restaurants with a certain type of food and limits on price/distance.
-func RestaurantFilter(r *[]Restaurant, foodType string, maxPrice float64, maxDistance float64) {
+func Filter(r []Restaurant, foodType string, maxPrice float64, maxDistance float64) []Restaurant {
 	//only executes filter functions if flags are set for that value
+
+	var fs []filter.Filterable = make([]filter.Filterable, 0)
+	for _, v := range r {
+		fs = append(fs, v)
+	}
+
 	if foodType != "" {
-		FilterFood(r, foodType)
+		for _, v := range fs {
+			v.SetLexicalOption(CUISINE)
+		}
+		fs = filter.Lexical(fs, filter.EQL, foodType)
 	}
 	if maxPrice > 0 {
-		FilterPrice(r, maxPrice)
+		for _, v := range fs {
+			v.SetOrdinalOption(PRICE)
+		}
+		fs = filter.Ordinal(fs, filter.LTE, maxPrice)
 	}
 	if maxDistance > 0 {
-		FilterDistance(r, maxDistance)
+		for _, v := range fs {
+			v.SetOrdinalOption(DISTANCE)
+		}
+		fs = filter.Ordinal(fs, filter.LTE, maxDistance)
 	}
+
+	helpMe := make([]Restaurant, 0)
+	for _, v := range fs {
+		helpMe = append(helpMe, v.(Restaurant))
+	}
+	return helpMe
 }
 
 // PrintSuggestions will iterate through a slice of restaurants and output the formatted
