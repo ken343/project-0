@@ -5,11 +5,25 @@ The Resturant Selection Tool is a CLI program that help a group of people select
 
 - [x] User can get a list for potential eating locations 
 - [x] User can get a filtered list of locations based on price, food genre, and distance from Liv+ apartments based on CLI flags
-- [] User can add new locations to text file to expand list of restaurant options 
+- [ ] User can add new locations to text file to expand list of restaurant options 
 
 **food [-t or --type] [type string] [-p or --price] [float price] [-d or --distance] [float distance]**
 
 ### To-Do List
 - [x] Add Basic Functionality to Program
 - [x] Add CLI flags to program arguments
-- [x] Add text file support for maintaining list of restaurants
+- [x] Add Data Persistance via JSON file for restaurant list
+- [ ] Refactor Code into more standard format
+- [ ] Add Proper Error Handling (think log package)
+
+### Code Debt Refactoring Periodic Routine Branch
+1) Bug Fixes
+2) Seperate Logic into Functions
+3) Remove Hardcoding
+4) Avoid Casting Values
+5) Promote Modularity with Packages
+6) Documentation
+7) Test/Benchmark/Example Additions
+
+## Engineering Design Process
+https://www.sciencebuddies.org/Files/5082/8/2013-updated_engineering-method-steps_v6b_noheader.png
