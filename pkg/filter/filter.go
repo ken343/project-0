@@ -9,6 +9,8 @@ const (
 )
 
 type Filterable interface {
+	SetOrdinalOption(option string)
+	SetLexicalOption(option string)
 	OrdinalVal() float64
 	LexicalVal() string
 }

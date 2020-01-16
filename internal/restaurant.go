@@ -1,16 +1,55 @@
 // Package restaurant is a package dedicated for representing restaurants and the
 // auxilory functions that operate on them.
-package main
+package restaurant
 
 import "fmt"
+
+const (
+	NAME     = "name"
+	CUISINE  = "cuisine"
+	PRICE    = "price"
+	DISTANCE = "distance"
+)
 
 // Restaurant is a data structure that represents restaurants with a
 // name, type of cuisine, maximum price, and a distance from Liv+.
 type Restaurant struct {
-	Name     string
-	Cuisine  string
-	Price    float64
-	Distance float64
+	Name          string
+	Cuisine       string
+	Price         float64
+	Distance      float64
+	ordinalOption string
+	lexicalOption string
+}
+
+func (r *Restaurant) SetOrdinalOption(option string) {
+	r.ordinalOption = option
+}
+
+func (r *Restaurant) SetLexicalOption(option string) {
+	r.lexicalOption = option
+}
+
+func (r *Restaurant) OrdinalVal() float64 {
+	switch r.ordinalOption {
+	case PRICE:
+		return r.Price
+	case DISTANCE:
+		return r.Distance
+	default:
+		panic("Need a proper Restaurant ordinal option.")
+	}
+}
+
+func (r *Restaurant) LexicalVal() string {
+	switch r.lexicalOption {
+	case NAME:
+		return r.Name
+	case CUISINE:
+		return r.Cuisine
+	default:
+		panic("Need a proper Restaurant lexical option")
+	}
 }
 
 // GetRecommendation prints out restaurant information in formatted string.
