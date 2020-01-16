@@ -3,6 +3,8 @@ package main
 import (
 	"encoding/json"
 	"os"
+
+	"github.com/ken343/project-0/cmd/food/internal/restaurant"
 )
 
 func handleError(e error) {
@@ -11,8 +13,8 @@ func handleError(e error) {
 	}
 
 }
-func loadRestaurants() []Restaurant {
-	var restaurants []Restaurant
+func loadRestaurants() []restaurant.Restaurant {
+	var restaurants []restaurant.Restaurant
 	f, err := os.Open(LISTFILE)
 	handleError(err)
 

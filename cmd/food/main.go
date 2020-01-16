@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+
+	"github.com/ken343/project-0/cmd/food/internal/restaurant"
 )
 
 func main() {
@@ -9,8 +11,8 @@ func main() {
 	var msg string = "Howdy User, here are your options for tonight."
 	fmt.Println(msg + "\n")
 	restSlice := loadRestaurants()
-	RestaurantFilter(&restSlice, *pFoodType, *pMaxPrice, *pMaxDistance)
-	PrintSuggestions(restSlice)
+	restaurant.Filter(restSlice, *pFoodType, *pMaxPrice, *pMaxDistance)
+	restaurant.PrintSuggestions(restSlice)
 
 	fmt.Println(restSlice)
 }

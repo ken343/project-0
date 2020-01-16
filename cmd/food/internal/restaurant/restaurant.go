@@ -75,7 +75,7 @@ func GetRecommendation(r Restaurant) {
 // restaurants with a certain type of food and limits on price/distance.
 func Filter(r []Restaurant, foodType string, maxPrice float64, maxDistance float64) []Restaurant {
 	//only executes filter functions if flags are set for that value
-
+	//TO-DO turn this []Restaurant to []Filterable logic into its own function!
 	var fs []filter.Filterable = make([]filter.Filterable, 0)
 	for _, v := range r {
 		fs = append(fs, v)
