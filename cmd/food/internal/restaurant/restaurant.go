@@ -80,7 +80,7 @@ func Filter(r []Restaurant, foodType string, maxPrice float64, maxDistance float
 	for _, v := range r {
 		fs = append(fs, v)
 	}
-
+	/////////////////////////////////////////////////////////
 	if foodType != "" {
 		for _, v := range fs {
 			v.SetLexicalOption(CUISINE)
@@ -99,7 +99,7 @@ func Filter(r []Restaurant, foodType string, maxPrice float64, maxDistance float
 		}
 		fs = filter.Ordinal(fs, filter.LTE, maxDistance)
 	}
-
+	/////////////////////////////////////////////////////
 	helpMe := make([]Restaurant, 0)
 	for _, v := range fs {
 		helpMe = append(helpMe, v.(Restaurant))

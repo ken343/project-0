@@ -11,8 +11,9 @@ func main() {
 	var msg string = "Howdy User, here are your options for tonight."
 	fmt.Println(msg + "\n")
 	restSlice := loadRestaurants()
-	restaurant.Filter(restSlice, *pFoodType, *pMaxPrice, *pMaxDistance)
-	restaurant.PrintSuggestions(restSlice)
 
-	fmt.Println(restSlice)
+	newSlice := restaurant.Filter(restSlice, *pFoodType, *pMaxPrice, *pMaxDistance)
+	restaurant.PrintSuggestions(newSlice)
+
+	fmt.Println(newSlice)
 }
