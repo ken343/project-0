@@ -13,7 +13,7 @@ The Resturant Selection Tool is a CLI program that help a group of people select
 - [x] Add Basic Functionality to Program
 - [x] Add CLI flags to program arguments
 - [x] Add Data Persistance via JSON file for restaurant list
-- [ ] Refactor Code into more standard format
+- [x] Refactor Code into more standard format
 - [ ] Add Proper Error Handling (think log package)
 
 ### Code Debt Refactoring Periodic Routine Branch
