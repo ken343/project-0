@@ -1,4 +1,4 @@
-package filter
+package restaurant
 
 func compareFloat64(v1 float64, v2 float64, flag string) bool {
 	switch flag {
@@ -13,7 +13,7 @@ func compareFloat64(v1 float64, v2 float64, flag string) bool {
 	case EQL:
 		return v1 == v2
 	default:
-		panic("Did not receive proper filter.COMPARE")
+		panic("comapareFloat64: Incorrect Comparison Flag!")
 	}
 }
 
@@ -30,6 +30,6 @@ func compareString(v1 string, v2 string, flag string) bool {
 	case EQL:
 		return v1 == v2
 	default:
-		panic("Did not receive proper filter.COMPARE")
+		panic("compareString: Incorrect Comparison Flag!")
 	}
 }
