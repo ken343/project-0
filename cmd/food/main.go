@@ -2,13 +2,14 @@ package main
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/ken343/project-0/cmd/food/internal/restaurant"
 )
 
 func main() {
-	var msg string = "Howdy User, here are your options for tonight."
-	fmt.Println(msg + "\n")
+	var name string = os.Getenv("USERNAME")
+	fmt.Printf("Howdy %s, here are your options for tonight.\n\n", name)
 
 	restSlice := loadRestaurants()
 
