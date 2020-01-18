@@ -18,7 +18,7 @@ Suggestions:
 - [O] Logging
 - [ ] API Library
 - [X] CLI flags
-- [ ] Environment variables
+- [X] Environment variables
 - [ ] Concurrency
 - [X] Data Persistance
 - [ ] HTTP/HTTPS API
