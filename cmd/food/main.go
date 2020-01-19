@@ -14,12 +14,6 @@ func main() {
 	var name string = os.Getenv("USERNAME")
 	fmt.Printf("Howdy %s, here are your options for tonight.\n\n", name)
 
-	restSlice := loadRestaurants()
-
-	restSlice = RestaurantFilter(restSlice, *pFoodType, *pMaxPrice, *pMaxDistance)
-
-	restaurant.PrintSuggestions(restSlice)
-
 	url := place.ProduceQueryString(0)
 	resp, err := http.Get(url)
 	if err != nil {
@@ -28,6 +22,7 @@ func main() {
 	defer resp.Body.Close()
 
 	var myPlace place.Places = loadPlaces(resp.Body)
+	//myPlace = RestaurantFilter(myPlace, *pFoodType, *pMaxPrice, *pMaxDistance)
 	fmt.Println(myPlace)
 }
 
