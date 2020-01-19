@@ -2,8 +2,11 @@ package main
 
 import (
 	"fmt"
+	"log"
+	"net/http"
 	"os"
 
+	"github.com/ken343/project-0/cmd/food/internal/place"
 	"github.com/ken343/project-0/cmd/food/internal/restaurant"
 )
 
@@ -16,6 +19,16 @@ func main() {
 	restSlice = RestaurantFilter(restSlice, *pFoodType, *pMaxPrice, *pMaxDistance)
 
 	restaurant.PrintSuggestions(restSlice)
+
+	url := place.ProduceQueryString(0)
+	resp, err := http.Get(url)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	var myPlace place.Places = loadPlaces(resp.Body)
+	fmt.Println(myPlace)
 }
 
 // RestaurantFilter will take in the command line flags and use them to pare down the array of restaurants
