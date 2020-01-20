@@ -1,11 +1,8 @@
-//    places, err := UnmarshalPlaces(bytes)
-//    bytes, err = places.Marshal()
-
 package place
 
 import (
-	"encoding/json"
 	"fmt"
+	"log"
 )
 
 const (
@@ -25,20 +22,6 @@ const (
 )
 
 var cuisines []string = []string{american, barbecue, chinese, french, hamburger, italian, japanese, mexican, pizza, seafood, steak, sushi, thai}
-
-// UnmarshalPlaces was the original way to take teh api data.
-// Will likely delete in the future.
-func UnmarshalPlaces(data []byte) (Places, error) {
-	var r Places
-	err := json.Unmarshal(data, &r)
-	return r, err
-}
-
-// Marshal was original way to take send back data in api format.
-// Will likely delete in the future.
-func (r *Places) Marshal() ([]byte, error) {
-	return json.Marshal(r)
-}
 
 // Places wraps around the api's retrurned results.
 // only the results array was useful.
@@ -67,6 +50,21 @@ func (r Result) String() string {
 	} else {
 		isOpen = "No"
 	}
-	return fmt.Sprintf("%s:\n[Address: %s | Price: %d | Open? %s]\n",
-		r.Name, r.FormattedAddress, *r.PriceLevel, isOpen)
+
+	var priceText string
+	switch *r.PriceLevel {
+	case 1:
+		priceText = "Low"
+	case 2:
+		priceText = "Medium"
+	case 3:
+		priceText = "High"
+	case 4:
+		priceText = "Extra-High"
+	default:
+		log.Fatal("Line 64: String() method - Invalid r.PriceLevel")
+	}
+
+	return fmt.Sprintf("%s:\n[Address: %s | Price: %s | Open? %s]\n",
+		r.Name, r.FormattedAddress, priceText, isOpen)
 }
