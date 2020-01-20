@@ -3,6 +3,7 @@ package place
 import (
 	"fmt"
 	"log"
+	"os"
 )
 
 // These values are equivalent to what google recognizes price level in there "maxprice" query.
@@ -16,7 +17,6 @@ const (
 // Keys for creating query string.
 const (
 	URL           = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=" // Core URL for API
-	KEY           = "AIzaSyA87nRXQgzR60DLwDe2jvPzDK56_4JWAN8"                           // Googe Place API Key
 	DEFAULTQUERY  = ""                                                                  // type of 'place' that the API should look for
 	LOCATION      = "32.727220,-97.105940"                                              // Latitude and Longitude of Latitude                                                            // About 12 mile search radius
 	DEFAULTRADIUS = 45000                                                               // About 12 miles around liv+
@@ -26,6 +26,7 @@ const (
 // The url will look for chow within a custom radius around liv+.
 func ProduceQueryString(query string, distance float64, prices float64) string {
 
+	KEY := ProduceKey("C:/Users/kmcdo/go/src/github.com/ken343/project-0/")
 	var stringQuery string
 	if query != "" {
 		stringQuery = query + "+"
@@ -54,4 +55,21 @@ func ProduceQueryString(query string, distance float64, prices float64) string {
 	msg := fmt.Sprintf("%s%sfood&location=%s&radius=%f&maxprice=%d&key=%s", URL, stringQuery, LOCATION, radius, priceLevel, KEY)
 	fmt.Println(msg)
 	return msg
+}
+
+// ProduceKey will spawn the api key necessary for the running the program.
+// The key is hidden in a text file so that it remain off of github.
+func ProduceKey(filepath string) string {
+	var keyBytes []byte
+	fmt.Println(keyBytes)
+	fmt.Println(len(keyBytes))
+
+	f, err := os.Open(filepath)
+	if err != nil {
+		log.Fatalf("My file %s did not open: %w", filepath, err)
+	}
+	defer f.Close()
+
+	f.Read(keyBytes)
+	return string(keyBytes)
 }
