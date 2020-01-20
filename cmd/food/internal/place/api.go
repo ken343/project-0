@@ -2,6 +2,7 @@ package place
 
 import (
 	"fmt"
+	"io/ioutil"
 	"log"
 	"os"
 )
@@ -26,7 +27,7 @@ const (
 // The url will look for chow within a custom radius around liv+.
 func ProduceQueryString(query string, distance float64, prices float64) string {
 
-	KEY := ProduceKey("C:/Users/kmcdo/go/src/github.com/ken343/project-0/")
+	KEY := ProduceKey("C:/Users/kmcdo/go/src/github.com/ken343/project-0/api_key.txtk")
 	var stringQuery string
 	if query != "" {
 		stringQuery = query + "+"
@@ -60,16 +61,17 @@ func ProduceQueryString(query string, distance float64, prices float64) string {
 // ProduceKey will spawn the api key necessary for the running the program.
 // The key is hidden in a text file so that it remain off of github.
 func ProduceKey(filepath string) string {
-	var keyBytes []byte
-	fmt.Println(keyBytes)
-	fmt.Println(len(keyBytes))
-
 	f, err := os.Open(filepath)
 	if err != nil {
 		log.Fatalf("My file %s did not open: %w", filepath, err)
 	}
 	defer f.Close()
 
-	f.Read(keyBytes)
+	fileInfo, err := f.Stat()
+	size := fileInfo.Size()
+
+	var keyBytes []byte = make([]byte, size)
+
+	keyBytes, _ = ioutil.ReadAll(f)
 	return string(keyBytes)
 }
