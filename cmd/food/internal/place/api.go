@@ -17,7 +17,7 @@ const (
 const (
 	URL           = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=" // Core URL for API
 	KEY           = "AIzaSyA87nRXQgzR60DLwDe2jvPzDK56_4JWAN8"                           // Googe Place API Key
-	DEFAULTQUERY  = "food"                                                              // type of 'place' that the API should look for
+	DEFAULTQUERY  = ""                                                                  // type of 'place' that the API should look for
 	LOCATION      = "32.727220,-97.105940"                                              // Latitude and Longitude of Latitude                                                            // About 12 mile search radius
 	DEFAULTRADIUS = "20000"                                                             // About 12 miles around liv+
 )
@@ -30,7 +30,7 @@ func ProduceQueryString(query string, distance float64, prices float64) string {
 	if stringQuery == "" {
 		stringQuery = DEFAULTQUERY
 	} else {
-		stringQuery = query
+		stringQuery = query + "+"
 	}
 
 	radius := distance * 1609.34 // 1 mile == 1609.34 meters
@@ -46,5 +46,5 @@ func ProduceQueryString(query string, distance float64, prices float64) string {
 		log.Fatalf("Max Price not set to proper valid number: %f", prices)
 	}
 
-	return fmt.Sprintf("%s%s&location=%s&radius=%f&maxprice=%d&key=%s", URL, stringQuery, LOCATION, radius, priceLevel, KEY)
+	return fmt.Sprintf("%s%sfood&location=%s&radius=%f&maxprice=%d&key=%s", URL, stringQuery, LOCATION, radius, priceLevel, KEY)
 }
