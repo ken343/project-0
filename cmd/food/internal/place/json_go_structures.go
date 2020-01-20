@@ -65,6 +65,6 @@ func (r Result) String() string {
 		log.Fatal("Line 64: String() method - Invalid r.PriceLevel")
 	}
 
-	return fmt.Sprintf("%s:\n[Address: %s | Price: %s | Open? %s]\n",
+	return fmt.Sprintf("%s:\nAddress: %s\nPrice: %s | Open? %s\n",
 		r.Name, r.FormattedAddress, priceText, isOpen)
 }

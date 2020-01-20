@@ -20,5 +20,5 @@ func main() {
 	defer resp.Body.Close()
 
 	var myPlace place.Places = loadPlaces(resp.Body)
-	fmt.Println(myPlace)
+	place.PrintSuggestions(myPlace)
 }
