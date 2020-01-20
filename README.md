@@ -6,7 +6,8 @@ The Resturant Selection Tool is a CLI program that help a group of people select
 
 - [x] User can get a list for potential eating locations
 - [x] User can get a filtered list of locations based on price, food genre, and distance from Liv+ apartments based on CLI flags
-- [ ] User can add new locations to text file to expand list of restaurant options
+- [X] User can get a list that is up to date with current Arlington restaurants.
+- [X] User can see if a restaurant from list output is currently open at time of running program.
 
 food [-t or --type] [type string] [-p or --price] [float price] [-d or --distance] [float distance]
 

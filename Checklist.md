@@ -21,7 +21,7 @@ Suggestions:
 - [X] Environment variables
 - [ ] Concurrency
 - [X] Data Persistance
-- [ ] HTTP/HTTPS API
+- [X] HTTP/HTTPS API
 
 ## Presentation
 
