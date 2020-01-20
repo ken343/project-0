@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-// These values are equivalent to what google recognizes price level in there "maxprice" query.
+// These values are equivalent to what google recognizes as price level in their "maxprice" query.
 const (
 	EXTRA  = 4 // Prices $30 dollars and up
 	HIGH   = 3 // Prices below $30 dollars
@@ -20,14 +20,17 @@ const (
 	URL           = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=" // Core URL for API
 	DEFAULTQUERY  = ""                                                                  // type of 'place' that the API should look for
 	LOCATION      = "32.727220,-97.105940"                                              // Latitude and Longitude of Latitude                                                            // About 12 mile search radius
-	DEFAULTRADIUS = 45000                                                               // About 12 miles around liv+
+	DEFAULTRADIUS = 45000                                                               // About 28 miles around liv+
 )
 
-// ProduceQueryString function assembles an url to be used with an HTTP GET method.
+// ProduceQueryString function assembles a url to be used with an HTTP GET method.
 // The url will look for chow within a custom radius around liv+.
 func ProduceQueryString(query string, distance float64, prices float64) string {
 
-	KEY := ProduceKey("C:/Users/kmcdo/go/src/github.com/ken343/project-0/api_key.txtk")
+	KEY := ProduceKey("C:/Users/kmcdo/go/src/github.com/ken343/project-0/api_key.txt")
+
+	// Make sure that each vaue is equivalent to some sensible defaults
+	// assuming that the user did not set a value for the CLI flags.
 	var stringQuery string
 	if query != "" {
 		stringQuery = query + "+"
@@ -54,7 +57,6 @@ func ProduceQueryString(query string, distance float64, prices float64) string {
 
 	//Debug Query String
 	msg := fmt.Sprintf("%s%sfood&location=%s&radius=%f&maxprice=%d&key=%s", URL, stringQuery, LOCATION, radius, priceLevel, KEY)
-	fmt.Println(msg)
 	return msg
 }
 

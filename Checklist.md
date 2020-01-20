@@ -15,7 +15,7 @@ Suggestions:
 - [X] Documentation
 - [ ] Unit testing
 - [ ] Benchmarking
-- [O] Logging
+- [ ] Logging
 - [ ] API Library
 - [X] CLI flags
 - [X] Environment variables
