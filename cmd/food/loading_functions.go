@@ -5,7 +5,7 @@ import (
 	"io"
 	"log"
 
-	"github.com/ken343/project-0/cmd/food/internal/place"
+	"github.com/ken343/project-0/cmd/food/localpkg/place"
 )
 
 func handleError(e error) {

@@ -7,7 +7,7 @@ import (
 	"os"
 	"runtime"
 
-	"github.com/ken343/project-0/cmd/food/internal/place"
+	"github.com/ken343/project-0/cmd/food/localpkg/place"
 )
 
 func main() {

@@ -3,11 +3,8 @@ package main
 import (
 	"flag"
 
-	"github.com/ken343/project-0/cmd/food/internal/place"
+	"github.com/ken343/project-0/cmd/food/localpkg/place"
 )
-
-// LISTFILE provides the name of the file where all the restaurant json data is located.
-const LISTFILE = "C:/Users/kmcdo/go/src/github.com/ken343/project-0/cmd/food/internal/restaurant/restaurant_list.json"
 
 var pMaxPrice *float64
 var pFoodType *string
