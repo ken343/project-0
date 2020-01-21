@@ -1,12 +1,15 @@
-package main
+package tests
 
 import (
 	"testing"
+
+	"github.com/ken343/project-0/cmd/food/localpkg/place"
 )
 
-func BenchmarkLoadRestaurnats(b *testing.B) {
-	testing.Init()
-	for i := 0; i < b.N; i++ {
-		loadRestaurants()
+func TestProduceKey(t *testing.T) {
+	myActualKey := place.ProduceKey("./test_key.go")
+	if myActualKey != "testkey123" {
+		t.Fail()
 	}
+
 }
