@@ -27,7 +27,7 @@ const (
 // The url will look for chow within a custom radius around liv+.
 func ProduceQueryString(query string, distance float64, prices float64) string {
 
-	KEY := ProduceKey("C:/Users/kmcdo/go/src/github.com/ken343/project-0/api_key.txt")
+	KEY := ProduceKey("./api_key.txt")
 
 	// Make sure that each vaue is equivalent to some sensible defaults
 	// assuming that the user did not set a value for the CLI flags.
