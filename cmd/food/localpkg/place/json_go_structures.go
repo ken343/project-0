@@ -43,6 +43,8 @@ type OpeningHours struct {
 	OpenNow bool `json:"open_now"`
 }
 
+// String methods implements standard "Stringer" inteface for the
+// Result type.
 func (r Result) String() string {
 	var isOpen string
 	if r.OpeningHours.OpenNow {

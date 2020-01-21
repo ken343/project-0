@@ -15,7 +15,9 @@ func handleError(e error) {
 
 }
 
-func loadPlaces(myReader io.Reader) place.Places {
+// LoadPlaces takes in data from a reader containing json and outputs
+// a place.
+func LoadPlaces(myReader io.Reader) place.Places {
 
 	myDecoder := json.NewDecoder(myReader)
 	var myPlaces place.Places

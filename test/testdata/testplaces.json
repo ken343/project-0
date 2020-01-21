@@ -1,0 +1,148 @@
+{
+    "html_attributions" : [],
+    "next_page_token" : "CqQCHQEAANgBB2SRn3ymzNm0gp8qjTqC3aTmi1p8x1oFAq7bj_ohHHiy30U7TJXBkgAMuFpPMF41b-7ZQ4yYv93KKLTwbrWTrZ9Vc1U3Z2zyY6uA7lJB2AiDA3uL2hFC2GouuxKiGhiFbQNcyIFyp-VE7CMFOJ8j6Vv4D7h0f3Nin7mQkVR7P4F7xm1Ha04UiQmLPfI4CcWklN5K0EzlI0dsLRGNHltKAHJ7ZlRa_9PH2wT84uptdKYgOIbyjzB-mvnxlB9sAUWJVdXRHx0-t4pHxMotQYLkdf3AWLCsQjmzF-M9IW3xXy-CCSiMlmrX6sDDUynvyK73Ka25eEZDpuH2EGJC860PVtMCGeUclYLVjMoXsxsUM-AwkM2ApPQOg__2MOO53RIQTPFDJ7aV8c7CLluuydIosRoUxryfZwUH8pJv_bOX6sJvXaubVso",
+    "results" : [
+       {
+          "formatted_address" : "300 W 1st St, Arlington, TX 76019, United States",
+          "geometry" : {
+             "location" : {
+                "lat" : 32.7316625,
+                "lng" : -97.1112409
+             },
+             "viewport" : {
+                "northeast" : {
+                   "lat" : 32.73322667989273,
+                   "lng" : -97.11001527010728
+                },
+                "southwest" : {
+                   "lat" : 32.73052702010729,
+                   "lng" : -97.11271492989273
+                }
+             }
+          },
+          "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+          "id" : "28b4f492082422b852c7969bd9a57596239e2699",
+          "name" : "Chick-fil-A",
+          "opening_hours" : {
+             "open_now" : true
+          },
+          "photos" : [
+             {
+                "height" : 288,
+                "html_attributions" : [
+                   "\u003ca href=\"https://maps.google.com/maps/contrib/115459851211638187365\"\u003eChick-fil-A\u003c/a\u003e"
+                ],
+                "photo_reference" : "CmRaAAAAOFH3tJHcqKvSZLkvc5g3-fxZhnNA33PiwBW6IPzrgDrlknEV8qjiYbehNoA8TKfAFjt2AfzFVEuKT48JpSgJVy9f8pBo8XgpWbF5Qykpslb0c2JDl1m72EIrjJKvxgJUEhBblxTnvjc3AzimLgqUQH9rGhS7a5ERgqwTcPsmDtwQp9W9tSqhHA",
+                "width" : 512
+             }
+          ],
+          "place_id" : "ChIJk0iBvxJ9ToYRZmGwHHDP05s",
+          "plus_code" : {
+             "compound_code" : "PVJQ+MG Arlington, Texas",
+             "global_code" : "8644PVJQ+MG"
+          },
+          "price_level" : 1,
+          "rating" : 4,
+          "reference" : "ChIJk0iBvxJ9ToYRZmGwHHDP05s",
+          "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+          "user_ratings_total" : 137
+       },
+       {
+          "formatted_address" : "720 W Division St, Arlington, TX 76012, United States",
+          "geometry" : {
+             "location" : {
+                "lat" : 32.7388758,
+                "lng" : -97.11537109999999
+             },
+             "viewport" : {
+                "northeast" : {
+                   "lat" : 32.74022562989272,
+                   "lng" : -97.11401292010727
+                },
+                "southwest" : {
+                   "lat" : 32.73752597010728,
+                   "lng" : -97.11671257989272
+                }
+             }
+          },
+          "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+          "id" : "09701839c1e63597cb42258efa32911e3b6230ab",
+          "name" : "Gyros House | Greek & Mediterranean Food in Arlington, TX",
+          "opening_hours" : {
+             "open_now" : true
+          },
+          "photos" : [
+             {
+                "height" : 3024,
+                "html_attributions" : [
+                   "\u003ca href=\"https://maps.google.com/maps/contrib/105851942091020991648\"\u003eMichael Cruz\u003c/a\u003e"
+                ],
+                "photo_reference" : "CmRaAAAAOmF4PMPT5b-NeZ9WCbbDo_CT05fRSbqgVrhEj6UfrBnHDbowRIVvPxLwlSogC0B3NxZdX78Q8ejMDusj0wgKcAmq5lA4EVTGd_v4Wz9XppRry3x54WVzdWax1fwTrCYNEhBN96yHBMj8myOmPIGQzP5ZGhQG54Tr56XaN-3jiMl4sEZ1jWdlMg",
+                "width" : 4032
+             }
+          ],
+          "place_id" : "ChIJ86ItJwt9ToYRVHGdPckAmAs",
+          "plus_code" : {
+             "compound_code" : "PVQM+HV Arlington, Texas",
+             "global_code" : "8644PVQM+HV"
+          },
+          "price_level" : 1,
+          "rating" : 4.6,
+          "reference" : "ChIJ86ItJwt9ToYRVHGdPckAmAs",
+          "types" : [
+             "meal_takeaway",
+             "restaurant",
+             "food",
+             "point_of_interest",
+             "establishment"
+          ],
+          "user_ratings_total" : 571
+       },
+       {
+          "formatted_address" : "300 W 1st St, Arlington, TX 76019, United States",
+          "geometry" : {
+             "location" : {
+                "lat" : 32.7315443,
+                "lng" : -97.1118058
+             },
+             "viewport" : {
+                "northeast" : {
+                   "lat" : 32.73316757989272,
+                   "lng" : -97.11029612010728
+                },
+                "southwest" : {
+                   "lat" : 32.73046792010728,
+                   "lng" : -97.11299577989271
+                }
+             }
+          },
+          "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+          "id" : "23a1c7c568603c20c0cc41450fc84dfd566fd189",
+          "name" : "Freshii",
+          "opening_hours" : {
+             "open_now" : false
+          },
+          "photos" : [
+             {
+                "height" : 2184,
+                "html_attributions" : [
+                   "\u003ca href=\"https://maps.google.com/maps/contrib/117882454408189342986\"\u003eSai Sreenath Reddy Valisakkagari\u003c/a\u003e"
+                ],
+                "photo_reference" : "CmRaAAAAXZgzy1NVv7Jkl_JpsqG5eaogsh6H-YSeD-tMqBZSojDWCNzOzgwv27vZvnQb20DFARb4bLtja8PxuEntHyku25vmk90XZW7CZ3stKlbnbV6CJgvcXjseqaDvHgYBlyFOEhAQS96zppiozxytWWFtoYrHGhTX70yHOZWEjI094A23DQJ3IIc7yg",
+                "width" : 4608
+             }
+          ],
+          "place_id" : "ChIJl4O1bXJ9ToYRWZ8H7gaNbLY",
+          "plus_code" : {
+             "compound_code" : "PVJQ+J7 Arlington, Texas",
+             "global_code" : "8644PVJQ+J7"
+          },
+          "price_level" : 2,
+          "rating" : 3.6,
+          "reference" : "ChIJl4O1bXJ9ToYRWZ8H7gaNbLY",
+          "types" : [ "restaurant", "food", "point_of_interest", "establishment" ],
+          "user_ratings_total" : 42
+       }
+    ],
+     "status" : "OK"
+}

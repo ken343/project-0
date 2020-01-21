@@ -26,6 +26,6 @@ func main() {
 	}
 	defer resp.Body.Close()
 
-	var myPlace place.Places = loadPlaces(resp.Body)
+	var myPlace place.Places = LoadPlaces(resp.Body)
 	place.PrintSuggestions(myPlace)
 }
