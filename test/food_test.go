@@ -1,7 +1,10 @@
 package test
 
 import (
+	"encoding/json"
 	"fmt"
+	"log"
+	"os"
 	"testing"
 
 	"github.com/ken343/project-0/cmd/food/localpkg/place"
@@ -42,3 +45,22 @@ func TestLoadPlaces(t *testing.T) {
 	}
 }
 */
+
+func BenchmarkPrintSuggestions(b *testing.B) {
+	f, err := os.Open("./testdata/testplaces.json")
+	if err != nil {
+		panic(err)
+	}
+	defer f.Close()
+
+	myDedoder := json.NewDecoder(f)
+	var myExpected place.Places
+	err = myDedoder.Decode(&myExpected)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	for i := 0; i < b.N; i++ {
+		place.PrintSuggestions(myExpected)
+	}
+}
