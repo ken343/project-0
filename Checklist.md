@@ -13,9 +13,9 @@ Suggestions:
 ## Features
 
 - [X] Documentation
-- [ ] Unit testing
-- [ ] Benchmarking
-- [ ] Logging
+- [X] Unit testing
+- [X] Benchmarking
+- [X] Logging
 - [ ] API Library
 - [X] CLI flags
 - [X] Environment variables
@@ -25,5 +25,5 @@ Suggestions:
 
 ## Presentation
 
-- [ ] 5 minute live demonstration
-- [ ] Slides & visual aides
+- [X] 5 minute live demonstration
+- [X] Slides & visual aides

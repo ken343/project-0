@@ -11,7 +11,7 @@ import (
 )
 
 func TestProduceKey(t *testing.T) {
-	myActualKey := place.ProduceKey("./test_key.txt")
+	myActualKey := place.ProduceKey("./testdata/test_key.txt")
 	if myActualKey != "testkey123" {
 		fmt.Println(myActualKey)
 		t.Errorf("ProduceKey(\"./test_key.txt\" failed, expected %v, got %v", "testkey123", myActualKey)
