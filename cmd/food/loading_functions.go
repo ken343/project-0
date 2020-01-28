@@ -5,12 +5,12 @@ import (
 	"io"
 	"log"
 
-	"github.com/ken343/project-0/cmd/food/localpkg/place"
+	"github.com/ken343/project-0/localpkg/place"
 )
 
 func handleError(e error) {
 	if e != nil {
-		panic(e)
+		log.Fatal(e)
 	}
 
 }

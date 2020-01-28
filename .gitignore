@@ -3,3 +3,4 @@ food.o
 api-key.txt
 food
 !*/
+config/.env

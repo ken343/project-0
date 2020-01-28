@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 
-	"github.com/ken343/project-0/cmd/food/localpkg/place"
+	"github.com/ken343/project-0/localpkg/place"
 )
 
 var pMaxPrice *float64
