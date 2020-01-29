@@ -24,7 +24,6 @@ func main() {
 		foodType := r.Form.Get("food")
 		foodDistance := r.Form.Get("distance")
 		foodPrice := r.Form.Get("pricelevel")
-		r.ParseForm()
 
 		// Convert Strings to float64s
 		floatDistance, err := strconv.ParseFloat(foodDistance, 64)
