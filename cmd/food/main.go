@@ -2,10 +2,11 @@ package main
 
 import (
 	"fmt"
-	"log"
 	"net/http"
 	"os"
 	"runtime"
+
+	"github.com/ken343/project-0/localpkg/myerror"
 
 	"github.com/ken343/project-0/localpkg/place"
 )
@@ -20,10 +21,14 @@ func main() {
 	}
 	fmt.Printf("Howdy %s, here are your options for tonight.\n\n", name)
 
+	//Query my server to get response with Place being returned as the payload.
+
+	//debug print
+	fmt.Println(url)
+
 	resp, err := http.Get(url) //url is globally located in config.go
-	if err != nil {
-		log.Fatal(err)
-	}
+
+	myerror.Check(err)
 	defer resp.Body.Close()
 
 	var myPlace place.Places = LoadPlaces(resp.Body)

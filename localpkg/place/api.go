@@ -44,6 +44,7 @@ func ProduceQueryString(query string, distance float64, prices float64) string {
 	} else {
 		radius = DEFAULTRADIUS * 1609.34 // 1 mile == 1609.34 meters
 	}
+
 	var priceLevel int64
 	if prices == 0 || prices >= 30 {
 		priceLevel = EXTRA
