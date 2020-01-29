@@ -1,6 +1,4 @@
-include ./config/.env
-
-.PHONY: all greeting
+include .env
 
 all: greeting daemon client
 

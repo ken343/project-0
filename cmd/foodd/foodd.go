@@ -18,26 +18,24 @@ func main() {
 		//Retrieve food type, distance and price from client application.
 
 		r.ParseForm()
-		myValues := r.URL.Query()
 
 		fmt.Println("Passed in URL: ", r.URL.RawQuery)
-		// Form.Get() is giving hard errors for distance and pricelevel.
-		// foodType := r.Form.Get("food")
-		// foodDistance := r.Form.Get("distance")
-		// foodPrice := r.Form.Get("pricelevel")
-		foodType := myValues.Get("food")
-		foodDistance := myValues.Get("distance")
-		foodPrice := myValues.Get("pricelevel")
-		fmt.Println("Before string conversions: foodType=", foodType, "foodDistance=", foodDistance, "foodPrice=", foodPrice)
-		floatFoodDistance, err := strconv.ParseFloat("11.11", 64)
+		//Form.Get() is giving hard errors for distance and pricelevel.
+		foodType := r.Form.Get("food")
+		foodDistance := r.Form.Get("distance")
+		foodPrice := r.Form.Get("pricelevel")
+		r.ParseForm()
+
+		// Convert Strings to float64s
+		floatDistance, err := strconv.ParseFloat(foodDistance, 64)
 		myerror.Check(err)
-		floatFoodPrice, err := strconv.ParseFloat("30.2", 64)
+		floatPrice, err := strconv.ParseFloat(foodPrice, 64)
 		myerror.Check(err)
 
 		//debug print
 		// Retrieve Place from API
 		fmt.Println("After Parse Form", foodType, foodDistance, foodPrice)
-		url := place.ProduceQueryString(foodType, floatFoodDistance, floatFoodPrice)
+		url := place.ProduceQueryString(foodType, floatDistance, floatPrice)
 		resp, err := http.Get(url) //url is globally located in config.go
 		myerror.Check(err)
 		defer resp.Body.Close()
