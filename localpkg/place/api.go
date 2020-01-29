@@ -2,7 +2,6 @@ package place
 
 import (
 	"fmt"
-	"io/ioutil"
 	"log"
 	"os"
 )
@@ -27,7 +26,7 @@ const (
 // The url will look for chow within a custom radius around liv+.
 func ProduceQueryString(query string, distance float64, prices float64) string {
 
-	KEY := ProduceKey("./api-key.txt")
+	KEY := ProduceKey()
 
 	// Make sure that each vaue is equivalent to some sensible defaults
 	// assuming that the user did not set a value for the CLI flags.
@@ -61,6 +60,7 @@ func ProduceQueryString(query string, distance float64, prices float64) string {
 	return msg
 }
 
+/* OLD PRODUCE KEY WITH TEXT FILE
 // ProduceKey will spawn the api key necessary for the running the program.
 // The key is hidden in a text file so that it remain off of github.
 func ProduceKey(filepath string) string {
@@ -80,4 +80,16 @@ func ProduceKey(filepath string) string {
 		panic(err)
 	}
 	return string(keyBytes)
+}
+*/
+
+// ProduceKey will retrieve the api key that should be set as an evironmental variable.
+// The environmental variable should be set by the .env file after the Makefile
+// has been ran.
+func ProduceKey() string {
+	myKey, ok := os.LookupEnv("APIKEY")
+	if ok == false {
+		log.Fatalln("APIKEY was not successfully retrieved. String is empty.")
+	}
+	return myKey
 }

@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"log"
 	"net/http"
@@ -29,13 +30,13 @@ func main() {
 		fmt.Println(foodType, foodDistance, foodPrice)
 		url := place.ProduceQueryString(foodType, floatFoodDistance, floatFoodPrice)
 		resp, err := http.Get(url) //url is globally located in config.go
-
 		myerror.Check(err)
 		defer resp.Body.Close()
 
 		var myPlace place.Places = LoadPlaces(resp.Body)
-		place.PrintSuggestions(myPlace)
 
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(myPlace)
 	})
 
 	err := http.ListenAndServe(":8080", nil)
