@@ -2,5 +2,6 @@ food.exe
 food.o
 api-key.txt
 food
+foodd
 !*/
 config/.env

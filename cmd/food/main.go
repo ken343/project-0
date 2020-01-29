@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"net/http"
 	"os"
@@ -31,6 +32,8 @@ func main() {
 	myerror.Check(err)
 	defer resp.Body.Close()
 
-	var myPlace place.Places = LoadPlaces(resp.Body)
-	place.PrintSuggestions(myPlace)
+	var clientPlace place.Places
+	json.NewDecoder(resp.Body).Decode(&clientPlace)
+
+	place.PrintSuggestions(clientPlace)
 }
