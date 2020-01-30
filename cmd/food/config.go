@@ -49,7 +49,7 @@ func constructQuery(query string, distance float64, prices float64) string {
 	// assuming that the user did not set a value for the CLI flags.
 	var stringQuery string
 	if query != "" {
-		stringQuery = query + "+"
+		stringQuery = query
 	} else {
 		stringQuery = DEFAULTQUERY
 	}
