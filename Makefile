@@ -1,4 +1,5 @@
 include .env
+export
 
 all: greeting daemon client
 
@@ -7,6 +8,6 @@ greeting:
 
 daemon:
 	go build ./cmd/foodd
-
+	export 
 client:
 	go build ./cmd/food

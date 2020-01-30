@@ -36,7 +36,9 @@ func init() {
 	flag.Parse()
 
 	var clientQuery string = constructQuery(*pFoodType, *pMaxDistance, *pMaxPrice)
-	url = "http//localhost:8080" + clientQuery
+	url = "http://localhost:8080/chow" + clientQuery
+
+	log.SetFlags(log.Llongfile | log.LstdFlags)
 
 }
 

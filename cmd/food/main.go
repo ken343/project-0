@@ -3,11 +3,10 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 	"net/http"
 	"os"
 	"runtime"
-
-	"github.com/ken343/project-0/localpkg/myerror"
 
 	"github.com/ken343/project-0/localpkg/place"
 )
@@ -29,7 +28,11 @@ func main() {
 
 	resp, err := http.Get(url) //url is globally located in config.go
 
-	myerror.Check(err)
+	if err != nil {
+		log.Fatalf("Error Check: %w", err)
+		// See about getting logging to a separate file by creating new logger.
+		// Which could be useful in the future for the logging manager.
+	}
 	defer resp.Body.Close()
 
 	var clientPlace place.Places
